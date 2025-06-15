@@ -22,7 +22,7 @@ async function startWebcam() {
 // Mengatur ukuran kanvas sama dengan video
 function setCanvasSize() {
     canvas.width = video.videoWidth; // Menetapkan lebar kanvas
-    canvas.height = video.videoHeight; // Menetapkan tinggi kanvas
+    canvas.height = video.videoHeight; // Menetapkan tinggi kanvas 
 }
 
 // Fungsi untuk mengambil foto
