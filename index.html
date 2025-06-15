@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Membuat halaman responsif -->
+    <title>PhotoBooth</title> 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Mengimpor TailwindCSS via CDN -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen"> <!-- Latar belakang abu-abu dan tata letak tengah -->
+    <h1 class="text-4xl font-bold mb-6">PhotoBooth</h1>
+    <div class="bg-white p-6 rounded-lg shadow-lg"> <!-- Kontainer utama dengan latar putih dan bayangan -->
+        <video id="video" class="w-full max-w-md" autoplay></video> <!-- Elemen video untuk menampilkan feed webcam -->
+        <canvas id="canvas" class="hidden"></canvas> <!-- Kanvas untuk menyimpan foto sementara, disembunyikan -->
+        <div class="mt-4 flex justify-between"> <!-- Kontainer untuk tombol -->
+            <button id="capture" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ambil Foto</button> <!-- Tombol untuk mengambil foto -->
+            <button id="save" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 hidden">Simpan Foto</button> <!-- Tombol untuk menyimpan foto, awalnya disembunyikan -->
+        </div>
+        <div class="mt-4"> <!-- Kontainer untuk pemilihan template -->
+            <label for="templateSelect" class="block text-sm font-medium text-gray-700">Pilih Template:</label> <!-- Label untuk dropdown -->
+            <select id="templateSelect" class="mt-1 block w-full p-2 border rounded"> <!-- Dropdown untuk memilih template -->
+                <option value="none">Tanpa Template</option> <!-- Opsi tanpa template -->
+                <option value="templates/template1.png">Template 1</option> <!-- Opsi template 1 -->
+                <option value="templates/template2.png">Template 2</option> <!-- Opsi template 2 -->
+            </select>
+        </div>
+        <div id="preview" class="mt-4 hidden"> <!-- Kontainer untuk pratinjau foto -->
+            <h2 class="text-lg font-semibold">Pratinjau:</h2> <!-- Judul pratinjau -->
+            <img id="photo" class="w-full max-w-md" alt="Pratinjau Foto"> <!-- Gambar untuk menampilkan pratinjau -->
+        </div>
+    </div>
+    <script src="js/script.js"></script> <!-- Mengimpor file JavaScript -->
+</body>
+</html>
